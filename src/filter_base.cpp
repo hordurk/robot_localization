@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, Charles River Analytics, Inc.
+ * Copyright (c) 2015, Charles River Analytics, Inc.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -337,10 +337,6 @@ namespace RobotLocalization
       return false;
     }
 
-    // TAM: REMOVE!
-    FB_DEBUG("Squared Mahalanobis is: " << sqMahalanobis << "\n" <<
-             "Threshold is: " << threshold << "\n" << "\n");
-
     return true;
   }
 }
@@ -405,7 +401,7 @@ std::ostream& operator<<(std::ostream& os, const std::vector<int> &vec)
   os << "[";
   for (size_t dim = 0; dim < vec.size(); ++dim)
   {
-    os << std::setiosflags(std::ios::left) << std::setw(12) << (vec[dim] ? "true " : "false");
+    os << std::setiosflags(std::ios::left) << std::setw(3) << (vec[dim] ? "t" : "f");
   }
   os << "]\n";
 
